@@ -8,7 +8,10 @@ import type { PageOpts, ThemeConfig } from 'nextra';
 export function MenuItems() {
   const { classes, cx } = useStyles();
 
-  const { themeConfig } = useContext<{ pageOpts?: PageOpts, themeConfig?: ThemeConfig }>(ThemeContext)
+  const { pageOpts, themeConfig } = useContext<{ pageOpts?: PageOpts, themeConfig?: ThemeConfig }>(ThemeContext)
+
+  // const navigation = pageOpts.pageMap.map(item => ({ name: item.name, kind: item.kind, route: item.route }))
+
 
   const items = themeConfig.primary_navigation.map((link: { name: string; route: string; }) => {
 
@@ -20,6 +23,8 @@ export function MenuItems() {
       {link.name}
     </Link>)
   });
+
+
   return (
     <Group className={classes.links} position='center' spacing={5}>
       {items}
