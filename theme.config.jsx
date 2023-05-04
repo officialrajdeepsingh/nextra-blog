@@ -9,12 +9,12 @@ export default {
       name: "Home"
     },
     {
-      route: '/post',
-      name: "Post"
-    }, 
+      route: '/posts',
+      name: "Blog"
+    },
     {
-      route: '/docs',
-      name: "Docs"
+      route: '/authors',
+      name: "Authors"
     },
     {
       route: '/about',
