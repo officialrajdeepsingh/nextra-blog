@@ -6,6 +6,7 @@ import type { PageOpts, ThemeConfig } from 'nextra';
 import { Group, ActionIcon } from '@mantine/core';
 import { useMantineColorScheme } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandFacebook, IconBrandGithub, IconSun, IconMoonStars, IconBrandLinkedin } from '@tabler/icons-react';
+import { SearchBar } from '../Search/Search';
 enum IconsName {
   "Facebook",
   "Twitter",
@@ -45,6 +46,8 @@ export function SocialIcons() {
 
   return (
     <Group spacing={0} className={classes.social} align="center" position="center" noWrap>
+
+      <SearchBar />
       <ActionIcon
         size="lg"
         variant="outline"
