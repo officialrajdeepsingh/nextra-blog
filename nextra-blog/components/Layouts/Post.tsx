@@ -1,10 +1,10 @@
 import React from 'react'
 import { Box, TypographyStylesProvider, Text, Title, Image, AspectRatio } from '@mantine/core';
-import { FrontMatter } from 'nextra';
-import {Toc } from "../Toc/Toc"
-export function Post({ children, pageOpts }: { children: React.ReactNode, pageOpts: PageOpts }) {
+import { FrontMatter, PageOpts } from 'nextra';
+import { Toc } from "../Toc/Toc"
+import Link from 'next/link';
 
-console.log(pageOpts.headings)
+export function Post({ children, pageOpts }: { children: React.ReactNode, pageOpts: PageOpts }) {
 
   return (<Box maw={724} mx="auto">
     <Box py={"lg"} >
@@ -17,9 +17,11 @@ console.log(pageOpts.headings)
         />
       </AspectRatio>
       <Title order={1}>{pageOpts.frontMatter.title}</Title>
-      <Text> Published By {pageOpts.frontMatter.author} </Text>
+      <Link href={`/authors/${pageOpts.frontMatter.author.toLowerCase().replaceAll(" ", "-")}`}>
+        <Text> Published By {pageOpts.frontMatter.author} </Text>
+      </Link>
     </Box>
-    <Toc links={pageOpts.headings} /> 
+    <Toc />
     <TypographyStylesProvider> {children}</TypographyStylesProvider>
   </Box>)
 
