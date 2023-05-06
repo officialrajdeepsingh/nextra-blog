@@ -43,7 +43,7 @@ export function AuthorCard({ subItem }) {
       <div style={{ flex: 1 }}>
         <Link href={subItem.route} className={classes.link}>
           <Text className={classes.center} component='h1' size="sm" weight={500}>
-            {subItem.frontMatter.title}
+            {subItem.frontMatter.name}
           </Text>
         </Link>
         <Text className={classes.center} component='h2' color="dimmed" size="xs">
@@ -54,7 +54,7 @@ export function AuthorCard({ subItem }) {
       <Group>
 
         {
-          subItem.frontMatter.social.map(item => {
+          subItem.frontMatter.social.map((item:{ name: string; url: string; } )=> {
             return <Link target='_blank' href={item.url} > <ActionIcon size="lg">
               {item.name === "github" ? <IconBrandGithub size={"1.1rem"} stroke={"1.5"} /> : <IconBrandTwitter size={"1.1rem"} stroke={"1.5"} />}
             </ActionIcon>
