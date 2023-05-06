@@ -47,25 +47,25 @@ export function SocialIcons() {
   return (
     <Group spacing={0} className={classes.social} align="center" position="center" noWrap>
 
-      <SearchBar />
-      <ActionIcon
-        size="lg"
-        variant="outline"
-        color={dark ? 'yellow' : 'blue'}
-        onClick={() => toggleColorScheme()}
-        title="Toggle color scheme"
-      >
-        {dark ? <IconSun size="1.1rem" /> : <IconMoonStars size="1.1rem" />}
-      </ActionIcon>
       {
-        themeConfig.social_links.map((link: { name: string; svg?: React.ReactNode; url: string; }) => {
-          return <Link key={link.name} target='_blank' href={link.url} > <ActionIcon size="lg">
-            {link.svg ? link.svg : Icons[link.name]}
-          </ActionIcon>
-          </Link>
-        }
+        themeConfig.social_links.map((link: { name: string; svg?: React.ReactNode; url: string; }) => <Link key={link.name} target='_blank' href={link.url} > <ActionIcon size="lg">
+          {link.svg ? link.svg : Icons[link.name]}
+        </ActionIcon>
+        </Link>
         )
       }
+      <SearchBar />
+      <ActionIcon
+        onClick={() => toggleColorScheme()}
+        size="lg"
+        sx={(theme) => ({
+          backgroundColor:
+            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+          color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
+        })}
+      >
+        {colorScheme === 'dark' ? <IconSun size="1.2rem" /> : <IconMoonStars size="1.2rem" />}
+      </ActionIcon>
     </Group >
 
   );
