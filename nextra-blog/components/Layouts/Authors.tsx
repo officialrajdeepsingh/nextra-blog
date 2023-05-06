@@ -21,7 +21,7 @@ export function Authors({ children, pageOpts }: { children: React.ReactNode, pag
 
                 return item.children.map((subItem) => {
                   if (subItem?.name !== "index" && subItem?.kind === "MdxPage") {
-                    return <AuthorCard key={subItem?.frontMatter.title} subItem={subItem} />
+                    return <AuthorCard key={subItem?.frontMatter.name} subItem={subItem} />
                   }
                 })
               }
