@@ -6,7 +6,6 @@ import { ArticleCard } from "../Cards/Card"
 import { SimpleGrid, Container } from '@mantine/core';
 import { useRouter } from 'next/router';
 export function Posts({ children, pageOpts }: { children: React.ReactNode, pageOpts: PageOpts }) {
-  // const { pageOpts } = useContext<{ pageOpts?: PageOpts, themeConfig?: ThemeConfig }>(ThemeContext);
   const router = useRouter()
   return (<>
     <Container py="xl">
