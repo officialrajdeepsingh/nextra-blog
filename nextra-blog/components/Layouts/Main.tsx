@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router';
 import type { PageOpts, ThemeConfig } from 'nextra';
 import { useContext } from 'react';
 import { ThemeContext } from '../../Provider/config';
@@ -21,8 +20,6 @@ const Layouts = {
 };
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
-
-  const router = useRouter()
 
   const { pageOpts } = useContext<{ pageOpts?: PageOpts, themeConfig?: ThemeConfig }>(ThemeContext);
 
