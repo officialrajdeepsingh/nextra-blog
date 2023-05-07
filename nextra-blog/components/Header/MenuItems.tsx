@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 export function MenuItems() {
   const { classes, cx } = useStyles();
   const router = useRouter()
-  console.log(router)
+
   const { themeConfig } = useContext<{ pageOpts?: PageOpts, themeConfig?: ThemeConfig }>(ThemeContext);
 
   const items = themeConfig.primary_navigation.map((link: { name: string; route: string; }) => {
