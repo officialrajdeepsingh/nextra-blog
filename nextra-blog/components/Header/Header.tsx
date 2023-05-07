@@ -12,7 +12,6 @@ export function HeaderMenu() {
 
   const { classes } = useStyles();
 
-
   return (
     <Header height={56} mb={120}>
       <Container className={classes.inner}>
