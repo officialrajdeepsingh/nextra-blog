@@ -7,6 +7,7 @@ import {
   Box,
 } from '@mantine/core';
 import { IconBrandTwitter, IconBrandGithub } from '@tabler/icons-react';
+import { useRegisterActions } from 'kbar';
 import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
@@ -54,8 +55,8 @@ export function AuthorCard({ subItem }) {
       <Group>
 
         {
-          subItem.frontMatter.social.map((item:{ name: string; url: string; } )=> {
-            return <Link target='_blank' href={item.url} > <ActionIcon size="lg">
+          subItem.frontMatter.social.map((item: { name: string; url: string; }) => {
+            return <Link key={item.name} target='_blank' href={item.url} > <ActionIcon size="lg">
               {item.name === "github" ? <IconBrandGithub size={"1.1rem"} stroke={"1.5"} /> : <IconBrandTwitter size={"1.1rem"} stroke={"1.5"} />}
             </ActionIcon>
             </Link>
