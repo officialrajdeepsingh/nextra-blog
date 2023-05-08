@@ -1,6 +1,10 @@
 import { IconBrandDeno } from '@tabler/icons-react';
+// import { OramaSearch } from '@orama/plugin-nextra'
 
 export default {
+  // search: {
+  //   component: OramaSearch,
+  // },
   footer: <p>MIT 2023 © Nextra.</p>,
   readMore: 'Read More →',
   primary_navigation: [
