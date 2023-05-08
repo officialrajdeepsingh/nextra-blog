@@ -25,6 +25,7 @@ const useStyles = createStyles((theme) => ({
 export function ArticleCard({ subItem }) {
   const { classes } = useStyles();
 
+
   return (<Card key={subItem.frontMatter.title} p="md" radius="md" component="div" className={classes.card}>
 
     <AspectRatio ratio={1920 / 1080}>
