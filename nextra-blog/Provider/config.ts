@@ -1,5 +1,10 @@
 import { PageOpts, ThemeConfig } from "nextra";
 import { createContext } from "react";
+import type { Action } from "kbar"
 
-export const SearchProvider = createContext<{ posts: [] }>({ posts: [] });
-export const ThemeContext = createContext<{ pageOpts?: PageOpts; themeConfig?: ThemeConfig; posts: [] }>({});
+interface themeConfig {
+  pageOpts: PageOpts;
+  themeConfig: ThemeConfig;
+  posts: Action[];
+}
+export const ThemeContext = createContext<themeConfig>({});
