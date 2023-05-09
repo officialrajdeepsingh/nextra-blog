@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ActionImpl } from "kbar";
-import { createStyles, UnstyledButton, Group, Text, Image, Center, Badge, rem, ActionIcon,Kbd } from '@mantine/core';
+import { ActionImpl,useRegisterActions} from "kbar";
+import { createStyles, UnstyledButton, Group, Text, Image, Center, Badge, rem, ActionIcon, Kbd } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   action: {
@@ -24,8 +24,9 @@ const ResultItem = React.forwardRef(
   function ResultItem({ action, active }: { action: ActionImpl; active: boolean; }, ref: React.Ref<HTMLDivElement>) {
 
     const { classes } = useStyles();
+
     return (
-      <div ref={ref} style={{ backgroundColor: "white", padding: "auto 10px", }}>
+      <div ref={ref} key={action.id} style={{ backgroundColor: "white", padding: "auto 10px", }}>
         <UnstyledButton
           className={classes.action}
           tabIndex={-1}
@@ -50,7 +51,7 @@ const ResultItem = React.forwardRef(
               )}
             </div>
 
-            {action.shortcut && action.shortcut.map( item=><Kbd>{item}</Kbd>)}
+            {action.shortcut && action.shortcut.map(item => <Kbd>{item}</Kbd>)}
 
           </Group>
         </UnstyledButton>
