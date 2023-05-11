@@ -11,9 +11,33 @@ image: /images/about-us.png
 author: Rajdeep Singh
 title: About us
 ---
-## About US
+
 Mollit reprehenderit voluptate sit deserunt deserunt adipisicing elit dolor minim ex excepteur amet velit. Ipsum enim in velit labore qui reprehenderit ex et. Et sint consectetur cupidatat aute elit quis aliqua labore dolor laborum aliqua eiusmod. Reprehenderit quis mollit Lorem minim enim aliquip cillum tempor ut eu. Amet anim mollit dolor eu incididunt aliquip sunt cupidatat. Dolor sint quis magna consequat nisi. Ut veniam enim laboris enim qui esse.
 
+```typescript
+
+  useEffect(() => {
+    fetch(`${router.basePath}/_next/static/chunks/nextra-data-${locale}.json`)
+      .then((res) => res.json())
+      .then((res) => {
+        for (const property in res) {
+          const title = res[property].title;
+
+          let currentValue = {
+            id: title.trim(),
+            name: title.trim(),
+            keywords: title.trim(),
+            shortcut: [],
+            perform: () => router.push(property),
+            parent: "blog",
+          };
+
+          setDocumentsItem((prev: Action[]) => [...prev, currentValue]);
+        }
+      });
+  }, [router, locale]);
+
+```
 Irure proident occaecat consequat do commodo ullamco deserunt fugiat id dolore labore culpa exercitation. Reprehenderit proident cillum non laborum officia magna sint ipsum cupidatat. Irure esse et Lorem minim nisi aute esse ex voluptate id id. Consectetur laboris commodo mollit anim amet ut. Elit aliquip deserunt labore ea excepteur incididunt ea quis velit anim laboris commodo.
 
 Quis eiusmod sint velit commodo ullamco officia dolor officia mollit. Eiusmod exercitation voluptate minim do. Sunt laboris aute dolore qui qui ex.
