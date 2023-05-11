@@ -1,10 +1,8 @@
 import { PageOpts, ThemeConfig } from "nextra";
 import { createContext } from "react";
-import type { Action } from "kbar"
 
 interface themeConfig {
-  pageOpts: PageOpts;
-  themeConfig: ThemeConfig;
-  posts: Action[];
+  pageOpts?: PageOpts;
+  themeConfig?: ThemeConfig;
 }
 export const ThemeContext = createContext<themeConfig>({});
