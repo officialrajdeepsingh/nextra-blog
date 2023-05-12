@@ -8,6 +8,7 @@ import {
   ColorScheme,
 } from "@mantine/core";
 import { MainLayout } from "./components/Layouts/Main";
+import { MDXProvider } from "nextra/mdx";
 
 export default function Layout(props: NextraThemeLayoutProps) {
   const { children, pageOpts, themeConfig } = props;
@@ -29,14 +30,16 @@ export default function Layout(props: NextraThemeLayoutProps) {
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}
       >
-        <MantineProvider
-          withGlobalStyles
-          withNormalizeCSS
-          theme={{ colorScheme }}
-        >
-          <HeaderMenu />
-          <MainLayout>{children}</MainLayout>
-        </MantineProvider>
+        <MDXProvider>
+          <MantineProvider
+            withGlobalStyles
+            withNormalizeCSS
+            theme={{ colorScheme }}
+          >
+            <HeaderMenu />
+            <MainLayout>{children}</MainLayout>
+          </MantineProvider>
+        </MDXProvider>
       </ColorSchemeProvider>
     </ThemeContext.Provider>
   );
