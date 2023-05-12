@@ -1,11 +1,15 @@
 ---
-type: tags
-name: tags 
+type: tag
+name: tags
 description: my tag is here
 tags:
   - Blog
   - About
 ---
 
+## Tags is here
 
-## Tags 
+import { useSSG } from 'nextra/ssg';
+import { getStaticProps, getStaticPaths } from "../../nextra-blog/components/Layouts/Tag"; 
+
+export { getStaticProps, getStaticPaths }
