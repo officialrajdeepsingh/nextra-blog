@@ -16,26 +16,9 @@ import {
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 import { SearchBar } from "../Search/Search";
-import { useDisclosure } from "@mantine/hooks";
-enum IconsName {
-  "Facebook",
-  "Twitter",
-  "Youtube",
-  "Instagram",
-  "Github",
-  "Linkedin",
-}
+import { iconsType } from "../../../types";
 
-enum IconsNames {
-  "Facebook" = (<IconBrandFacebook size={"1.1rem"} stroke={"1.5"} />),
-  "Twitter" = (<IconBrandTwitter size="1.1rem" stroke={1.5} />),
-  "Youtube" = (<IconBrandYoutube size="1.1rem" stroke={1.5} />),
-  "Instagram" = (<IconBrandInstagram size="1.1rem" stroke={1.5} />),
-  "Github" = (<IconBrandGithub size="1.1rem" stroke={1.5} />),
-  "Linkedin" = (<IconBrandLinkedin size="1.1rem" stroke={1.5} />),
-}
-
-let Icons: IconsNames = {
+let Icons = {
   Facebook: <IconBrandFacebook size={"1.1rem"} stroke={"1.5"} />,
   Twitter: <IconBrandTwitter size="1.1rem" stroke={1.5} />,
   Youtube: <IconBrandYoutube size="1.1rem" stroke={1.5} />,
@@ -47,8 +30,6 @@ let Icons: IconsNames = {
 export function SocialIcons() {
   const { classes } = useStyles();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const [opened, { open, close }] = useDisclosure(false);
-
   const { themeConfig } = useContext<{
     pageOpts?: PageOpts;
     themeConfig?: ThemeConfig;
@@ -63,14 +44,16 @@ export function SocialIcons() {
       noWrap
     >
       {themeConfig.social_links.map(
-        (link: { name: string; svg?: React.ReactNode; url: string }) => (
-          <Link key={link.name} target="_blank" href={link.url}>
-            {" "}
-            <ActionIcon size="lg">
-              {link.svg ? link.svg : Icons[link.name]}
-            </ActionIcon>
-          </Link>
-        )
+        (link: { name: iconsType; svg?: React.ReactNode; url: string }) => {
+          console.log(link.name);
+          return (
+            <Link key={link.name} target="_blank" href={link.url}>
+              <ActionIcon size="lg">
+                {link.svg ? link.svg : Icons[link.name]}
+              </ActionIcon>
+            </Link>
+          );
+        }
       )}
       <SearchBar />
       <ActionIcon
