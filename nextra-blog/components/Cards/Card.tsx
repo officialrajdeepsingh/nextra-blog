@@ -1,6 +1,7 @@
 import { createStyles, Card, Image, Text, AspectRatio } from "@mantine/core";
 import Link from "next/link";
 import dayjs from "dayjs";
+import { BlogPageOpts } from "../../../types";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -22,7 +23,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function ArticleCard({ subItem }) {
+export function ArticleCard({ subItem }:{subItem:BlogPageOpts }) {
   const { classes } = useStyles();
 
   return (
