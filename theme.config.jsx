@@ -1,60 +1,57 @@
-import { IconBrandDeno } from '@tabler/icons-react';
-// import { OramaSearch } from '@orama/plugin-nextra'
+import { IconBrandDeno } from "@tabler/icons-react";
 
-export default {
-  // search: {
-  //   component: OramaSearch,
-  // },
+const themeConfig = {
   footer: <p>MIT 2023 © Nextra.</p>,
-  readMore: 'Read More →',
+  readMore: "Read More →",
   primary_navigation: [
     {
-      route: '/',
-      name: "Home"
+      route: "/",
+      name: "Home",
     },
     {
-      route: '/posts',
-      name: "Blog"
+      route: "/posts",
+      name: "Blog",
     },
     {
-      route: '/authors',
-      name: "Authors"
+      route: "/authors",
+      name: "Authors",
     },
     {
-      route: '/about',
-      name: "About"
+      route: "/about",
+      name: "About",
     },
     {
-      route: '/contact',
-      name: "Contact"
+      route: "/contact",
+      name: "Contact",
     },
-
   ],
   social_links: [
     {
       name: "Facebook",
-      url: "https://facebook.com/officialrajdeepsingh"
+      url: "https://facebook.com/officialrajdeepsingh",
     },
     {
       name: "Twitter",
-      url: "https://facebook.com/officialrajdeepsingh"
+      url: "https://facebook.com/officialrajdeepsingh",
     },
     {
       name: "Linkedin",
-      url: "https://facebook.com/officialrajdeepsingh"
+      url: "https://facebook.com/officialrajdeepsingh",
     },
     {
       name: "Instagram",
-      url: "https://facebook.com/officialrajdeepsingh"
+      url: "https://facebook.com/officialrajdeepsingh",
     },
     {
       name: "Github",
-      url: "https://facebook.com/officialrajdeepsingh"
+      url: "https://facebook.com/officialrajdeepsingh",
     },
     {
       name: "facebook",
       svg: <IconBrandDeno />,
-      url: "https://facebook.com/officialrajdeepsingh"
+      url: "https://facebook.com/officialrajdeepsingh",
     },
-  ]
-}
+  ],
+};
+
+export default themeConfig;
