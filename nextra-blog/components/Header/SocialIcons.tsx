@@ -45,7 +45,6 @@ export function SocialIcons() {
     >
       {themeConfig.social_links.map(
         (link: { name: iconsType; svg?: React.ReactNode; url: string }) => {
-          console.log(link.name);
           return (
             <Link key={link.name} target="_blank" href={link.url}>
               <ActionIcon size="lg">
