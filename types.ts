@@ -1,38 +1,28 @@
-import type { PageOpts } from "nextra";
-import type { ReactNode } from "react";
-import type { Components } from "nextra/mdx";
-import { Image } from "@mantine/core";
-import { type } from "os";
+import type {
+  PageMapItem,
+  PageOpts,
+  MdxFile,
+  ReadingTime,
+  Heading,
+} from "nextra";
 
-export interface NextraBlogTheme {
-  comments?: ReactNode;
-  components?: Components;
-  cusdis?: {
-    appId: string;
-    host?: string;
-    lang: string;
-  };
-  darkMode?: boolean;
-  dateFormatter?: (date: Date) => string;
-  footer?: ReactNode;
-  head?: ({
-    meta,
-    title,
-  }: {
-    meta: Record<string, any>;
-    title: string;
-  }) => ReactNode;
-  navs?: {
-    name: string;
-    url: string;
-  }[];
-  postFooter?: string;
-  readMore?: string;
-  titleSuffix?: string;
+// right
+export type MdxFileCard<FrontMatterType = BlogFrontMatter> = {
+  kind: "MdxPage";
+  name: string;
+  route: string;
+  locale: string;
+  frontMatter: FrontMatterType;
+};
+
+export type MdxFileAuthorCard<FrontMatterType = AuthorFrontMatter> = {
+  kind: "MdxPage";
+  name: string;
+  route: string;
+  locale: string;
+  frontMatter: FrontMatterType;
 }
 
-export type BlogPageOpts = PageOpts<BlogFrontMatter>;
-export type AuthorPageOpts = PageOpts<AuthorFrontMatter>;
 export type LayoutTypes =
   | "home"
   | "post"
@@ -42,6 +32,7 @@ export type LayoutTypes =
   | "author"
   | "authors";
 
+
 export type BlogFrontMatter = {
   author?: string;
   date?: string;
@@ -50,6 +41,15 @@ export type BlogFrontMatter = {
   tags?: string[];
   title: string;
   type: "post";
+};
+
+// define Author frontmatter for author card
+export type MdxFileAuthor<FrontMatterType = AuthorFrontMatter> = {
+  kind: "MdxPage";
+  name: string;
+  route: string;
+  locale?: string;
+  frontMatter: FrontMatterType;
 };
 export type iconsType =
   | "Facebook"
@@ -62,13 +62,10 @@ export type iconsType =
 export type AuthorFrontMatter = {
   name: string;
   description?: string;
+  date?: string;
   image?: string;
   tags?: string[];
   title: string;
   type: "author";
   social?: { name: iconsType; svg?: React.ReactNode; url: string }[];
 };
-export interface LayoutProps {
-  config: NextraBlogTheme;
-  opts: BlogPageOpts;
-}
