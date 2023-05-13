@@ -1,3 +1,5 @@
+/// <reference no-default-lib="true"/>
+
 import type { SearchResultWithHighlight } from "@orama/plugin-match-highlight";
 import type { Orama } from "@orama/orama";
 import { create, insertMultiple } from "@orama/orama";
