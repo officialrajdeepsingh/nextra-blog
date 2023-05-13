@@ -7,9 +7,8 @@ tags:
   - About
 ---
 
-## Tags is here
+import { getStaticProps, getStaticPaths,TagName } from "../../nextra-blog/components/Layouts/Tag"; 
 
-import { useSSG } from 'nextra/ssg';
-import { getStaticProps, getStaticPaths } from "../../nextra-blog/components/Layouts/Tag"; 
+## Posts Tagged with <TagName />
 
-export { getStaticProps, getStaticPaths }
+export { getStaticProps, getStaticPaths,TagName}
