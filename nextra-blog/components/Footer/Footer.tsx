@@ -15,8 +15,6 @@ export function Footer() {
 
   const { logo, secondary_navigation } = themeConfig;
 
-  console.log(secondary_navigation);
-
   const items = secondary_navigation.map(
     (link: { name: string; route: string }) => {
       return (
