@@ -1,8 +1,9 @@
 import { IconBrandDeno } from "@tabler/icons-react";
 
 const themeConfig = {
-  footer: <p>MIT 2023 © Nextra.</p>,
-  readMore: "Read More →",
+  logo: {
+    text: "Protfolio Blog",
+  },
   primary_navigation: [
     {
       route: "/",
@@ -19,6 +20,20 @@ const themeConfig = {
     {
       route: "/about",
       name: "About",
+    },
+    {
+      route: "/contact",
+      name: "Contact",
+    },
+  ],
+  secondary_navigation: [
+    {
+      route: "/disclaimer",
+      name: "Disclaimer",
+    },
+    {
+      route: "/privacy-policy",
+      name: "Privacy policy",
     },
     {
       route: "/contact",
