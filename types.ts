@@ -1,12 +1,3 @@
-import type {
-  PageMapItem,
-  PageOpts,
-  MdxFile,
-  ReadingTime,
-  Heading,
-} from "nextra";
-
-// right
 export type MdxFileCard<FrontMatterType = BlogFrontMatter> = {
   kind: "MdxPage";
   name: string;
@@ -21,7 +12,7 @@ export type MdxFileAuthorCard<FrontMatterType = AuthorFrontMatter> = {
   route: string;
   locale: string;
   frontMatter: FrontMatterType;
-}
+};
 
 export type LayoutTypes =
   | "home"
@@ -31,7 +22,6 @@ export type LayoutTypes =
   | "tag"
   | "author"
   | "authors";
-
 
 export type BlogFrontMatter = {
   author?: string;
