@@ -36,24 +36,26 @@ export function SocialIcons() {
   }>(ThemeContext);
 
   return (
-    <Group
-      spacing={0}
-      className={classes.social}
-      align="center"
-      position="center"
-      noWrap
-    >
-      {themeConfig.social_links.map(
-        (link: { name: iconsType; svg?: React.ReactNode; url: string }) => {
-          return (
-            <Link key={link.name} target="_blank" href={link.url}>
-              <ActionIcon size="lg">
-                {link.svg ? link.svg : Icons[link.name]}
-              </ActionIcon>
-            </Link>
-          );
-        }
-      )}
+    <Group spacing={0} className={classes.social} align="center" noWrap>
+      <Group
+        className={classes.socialHide}
+        align="center"
+        position="center"
+        noWrap
+      >
+        {themeConfig.social_links.map(
+          (link: { name: iconsType; svg?: React.ReactNode; url: string }) => {
+            return (
+              <Link key={link.name} target="_blank" href={link.url}>
+                <ActionIcon size="lg">
+                  {link.svg ? link.svg : Icons[link.name]}
+                </ActionIcon>
+              </Link>
+            );
+          }
+        )}
+      </Group>
+
       <SearchBar />
       <ActionIcon
         onClick={() => toggleColorScheme()}
