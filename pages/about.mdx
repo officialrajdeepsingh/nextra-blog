@@ -12,9 +12,50 @@ author: Rajdeep Singh
 title: About us
 ---
 
-Mollit reprehenderit voluptate sit deserunt deserunt adipisicing elit dolor minim ex excepteur amet velit. Ipsum enim in velit labore qui reprehenderit ex et. Et sint consectetur cupidatat aute elit quis aliqua labore dolor laborum aliqua eiusmod. Reprehenderit quis mollit Lorem minim enim aliquip cillum tempor ut eu. Amet anim mollit dolor eu incididunt aliquip sunt cupidatat. Dolor sint quis magna consequat nisi. Ut veniam enim laboris enim qui esse.
 
-```typescript
+import { IconPhoto,IconAlertCircle, IconMessageCircle, IconSettings } from '@tabler/icons-react';
+
+<Mark> Mollit reprehenderit </Mark>voluptate sit deserunt deserunt adipisicing elit dolor minim ex excepteur amet velit. Ipsum enim in velit labore qui reprehenderit ex et. Et sint consectetur cupidatat aute elit quis aliqua labore dolor laborum aliqua eiusmod. Reprehenderit quis mollit Lorem minim enim aliquip cillum tempor ut eu. Amet anim mollit dolor eu incididunt aliquip sunt cupidatat. Dolor sint quis magna consequat nisi. Ut veniam enim laboris enim qui esse.
+
+    <Alert>
+      Somethingsterrible happened! You made a mistake and there is no going back, your data was lost forever!
+    </Alert>
+
+    <Blockquote cite="– Forrest Gump">
+      Life is like an npm install – you never know what you are going to get.
+    </Blockquote>
+    <Divider />
+>  Life is like an npm install – you never know what you are going to get.
+<Divider />
+ <Tabs defaultValue="NPM">
+      <Tabs.List>
+        <Tabs.Tab value="NPM" icon={<IconPhoto size="0.8rem" />}>NPM</Tabs.Tab>
+        <Tabs.Tab value="Yarn" icon={<IconMessageCircle size="0.8rem" />}>Yarn</Tabs.Tab>
+        <Tabs.Tab value="PNPM" icon={<IconSettings size="0.8rem" />}>PNPM</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value="NPM" pt="xs">
+        ```bash
+        npm install nextra 
+        ```
+      </Tabs.Panel>
+
+      <Tabs.Panel value="Yarn" pt="xs">
+         ```bash
+         yarn install nextra
+         ```
+
+      </Tabs.Panel>
+
+      <Tabs.Panel value="PNPM" pt="xs">
+         ```bash
+         pnpm install nextra 
+         ```
+      </Tabs.Panel>
+    </Tabs>
+
+<Divider my="sm" size="lg" variant="dotted" />
+```typescript showLineNumbers
 
   useEffect(() => {
     fetch(`${router.basePath}/_next/static/chunks/nextra-data-${locale}.json`)
