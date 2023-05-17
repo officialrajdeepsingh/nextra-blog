@@ -14,14 +14,15 @@ export type MdxFileAuthorCard<FrontMatterType = AuthorFrontMatter> = {
   frontMatter: FrontMatterType;
 };
 
-export type LayoutTypes =
-  | "home"
+export type LayoutTypes = "home"
   | "post"
   | "page"
   | "posts"
   | "tag"
   | "author"
-  | "authors";
+  | "authors"
+  | 404
+  | 500;
 
 export type BlogFrontMatter = {
   author?: string;
