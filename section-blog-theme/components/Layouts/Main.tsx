@@ -10,7 +10,9 @@ import { Posts } from "./Posts";
 import { HomePage } from "./HomePage";
 import { Tag } from "./Tag";
 import { LayoutTypes } from "../../../types";
-import { NotFound } from "./404";
+import { NotFound } from "./404"; 
+import { ServerError } from "./500";
+
 const Layouts = {
   post: Post,
   posts: Posts,
@@ -20,6 +22,7 @@ const Layouts = {
   authors: Authors,
   tag: Tag,
   404: NotFound,
+  500: ServerError,
 };
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
@@ -29,7 +32,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
   }>(ThemeContext);
 
   let LayoutType: LayoutTypes =
-    pageOpts?.frontMatter.type || ("home" as string);
+    pageOpts?.frontMatter.type || ("home" as string );
 
   let Layout = Layouts[LayoutType];
 
